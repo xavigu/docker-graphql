@@ -47,7 +47,7 @@ jobs:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push xavigu/docker-graphql:$NEW_VERSION
-        echo "Version $NEW_VERSION pushed
+        echo "Version $NEW_VERSION pushed"
 
 
         
