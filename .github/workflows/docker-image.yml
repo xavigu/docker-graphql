@@ -33,7 +33,7 @@ jobs:
       
     - name: Push Docker image
       run: |
-        docker push xavigu/docker-graphql:0.0.2 .
+        docker push xavigu/docker-graphql:0.0.2
         
         
     # - name: Build the Docker image
