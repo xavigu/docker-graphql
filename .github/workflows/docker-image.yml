@@ -36,13 +36,18 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Finalizando login"
         
-    # - name: Build Docker image
-    #   run: |  
-    #     docker build -t xavigu/docker-graphql:0.0.2 .
+    - name: Build Docker image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |  
+        docker build -t xavigu/docker-graphql:$NEW_VERSION .
       
-    # - name: Push Docker image
-    #   run: |
-    #     docker push xavigu/docker-graphql:0.0.2
+    - name: Push Docker image
+      env:
+        NEW_VERSION: ${{ steps.version.outputs.version }}
+      run: |
+        docker push xavigu/docker-graphql:$NEW_VERSION
+        echo "Version $NEW_VERSION pushed
 
 
         
