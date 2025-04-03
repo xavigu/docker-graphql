@@ -28,10 +28,12 @@ jobs:
         echo "Finalizando login"
         
     - name: Build Docker image
-      run: docker buid -t xavigu/docker-graphql:0.0.2 .
+      run: |  
+        docker build -t xavigu/docker-graphql:0.0.2 .
       
     - name: Push Docker image
-      run: docker push xavigu/docker-graphql:0.0.2 .
+      run: |
+        docker push xavigu/docker-graphql:0.0.2 .
         
         
     # - name: Build the Docker image
